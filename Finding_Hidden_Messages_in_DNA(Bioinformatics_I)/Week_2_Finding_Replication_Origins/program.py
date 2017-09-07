@@ -24,5 +24,3 @@ from functions import *
 #	string += lines[i]
 #print(' '.join(str(i) for i in MinimumSkew(string)))
 #print(string[3764800:3764900])
-
-print(len(Neighbors('TGCAT',2)))

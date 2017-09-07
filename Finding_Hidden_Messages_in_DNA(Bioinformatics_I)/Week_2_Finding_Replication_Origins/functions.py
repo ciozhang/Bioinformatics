@@ -1,4 +1,4 @@
-def MaximumSkew(Genome):
+def MinimumSkew(Genome):
     Skew = [0 for _ in range(len(Genome)+1)]
     for i in range(1,len(Genome)+1):
         if Genome[i-1] == 'G':
@@ -7,10 +7,10 @@ def MaximumSkew(Genome):
             Skew[i] = Skew[i-1]-1
         else:
             Skew[i] = Skew[i-1]
-    maxSkew = max(Skew)
+    minSkew = min(Skew)
     output = []
     for i in range(len(Skew)):
-        if Skew[i] == maxSkew:
+        if Skew[i] == minSkew:
             output.append(i)
     return output
 

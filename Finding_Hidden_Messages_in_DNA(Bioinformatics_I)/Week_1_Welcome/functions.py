@@ -31,7 +31,7 @@ def ReverseComplement(Pattern):
         elif i == 'G':
             revComp += 'C'
         else:
-        	print('not ATCG, somrthing wrong')
+        	print('not ATCG, something wrong')
     return revComp[::-1]
 
 def PatternMatching(Pattern, Genome):
