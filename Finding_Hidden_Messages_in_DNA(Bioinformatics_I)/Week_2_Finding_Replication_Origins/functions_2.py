@@ -1,3 +1,7 @@
+import sys
+sys.path.extend(['Week_1_Welcome'])   # run in path 'Bioinformatics\Finding_Hidden_Messages_in_DNA(Bioinformatics_I)'
+from functions_1 import *
+
 def MinimumSkew(Genome):
     Skew = [0 for _ in range(len(Genome)+1)]
     for i in range(1,len(Genome)+1):
@@ -56,47 +60,6 @@ def Neighbors(Pattern, d):
             Neighborhood.append(Pattern[0]+Text)
     return Neighborhood
 
-
-def SymbolToNumber(Symbol):
-    if 'A' in Symbol:
-        return 0
-    elif 'C' in Symbol:
-        return 1
-    elif 'G' in Symbol:
-        return 2
-    elif 'T' in Symbol:
-        return 3
-
-def PatternToNumber(Pattern):
-    if len(Pattern)==1:
-        return SymbolToNumber(Pattern)
-    else:
-        symbol = Pattern[-1]
-        Prefix = Pattern[:-1]
-        return 4 * PatternToNumber(Prefix) + SymbolToNumber(symbol)
-
-def NumberToSymbol(index):
-    index = int(index)
-    if index == 0:
-        return 'A'
-    elif index == 1:
-        return 'C'
-    elif index == 2:
-        return 'G'
-    elif index == 3:
-        return 'T'
-
-def NumberToPattern(index, k):
-    index = int(index)
-    k = int(k)
-    if k == 1:
-        return NumberToSymbol(index)
-    else:
-        prefixIndex = index//4
-        r = index%4
-        symbol = NumberToSymbol(r)
-        return NumberToPattern(prefixIndex,k-1)+symbol
-
 def ComputingFrequenciesWithMismatches(Text, k, d):
     FrequenciesArray = [0 for i in range(4**k)]
     for i in range(len(Text)-k+1):
@@ -134,22 +97,6 @@ def ComputingWordsWithMismatches(Text, k, d):
             Pattern = NumberToPattern(SortedIndex[i], k)
             FrequentPatterns.append(Pattern)
     return FrequentPatterns
-
-def ReverseComplement(Pattern):
-    revComp = '' # output variable
-    # your code here
-    for i in Pattern:
-        if i == 'A':
-            revComp += 'T'
-        elif i == 'T':
-            revComp += 'A'
-        elif i == 'C':
-            revComp += 'G'
-        elif i == 'G':
-            revComp += 'C'
-        else:
-            print('not ATCG, something wrong')
-    return revComp[::-1]
 
 def ComputingWordsWithMismatchesandReverseComplement(Text, k, d):
     k = int(k)

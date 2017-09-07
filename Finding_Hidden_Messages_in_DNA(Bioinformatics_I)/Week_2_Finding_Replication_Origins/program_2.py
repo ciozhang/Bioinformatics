@@ -1,6 +1,7 @@
-from functions import *
+# run in path 'Bioinformatics\Finding_Hidden_Messages_in_DNA(Bioinformatics_I)'
+from functions_2 import *
 
-#import sys
+import sys
 #lines = sys.stdin.read().splitlines()
 
 #print(HammingDistance(lines[0],lines[1]))
