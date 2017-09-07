@@ -1,7 +1,7 @@
 from functions import *
 
-import sys
-lines = sys.stdin.read().splitlines()
+#import sys
+#lines = sys.stdin.read().splitlines()
 
 #print(HammingDistance(lines[0],lines[1]))
 
@@ -24,3 +24,5 @@ lines = sys.stdin.read().splitlines()
 #	string += lines[i]
 #print(' '.join(str(i) for i in MinimumSkew(string)))
 #print(string[3764800:3764900])
+
+print(len(Neighbors('TGCAT',2)))
